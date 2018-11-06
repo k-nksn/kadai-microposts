@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller
+use App\Http\Controllers\Controller;
 
 class MicropostsController extends Controller
 {
@@ -53,4 +53,6 @@ class MicropostsController extends Controller
         }
 
         return redirect()->back();
+    }
+
 }
