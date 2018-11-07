@@ -35,11 +35,13 @@ class User extends Authenticatable
     public function followings()
     {
         return $this->belongsToMany(User::class, 'user_follow', 'user_id', 'follow_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'favorites', 'user_id', 'follow_id')->withTimestamps();
     }
 
     public function followers()
     {
         return $this->belongsToMany(User::class, 'user_follow', 'follow_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'favorites', 'follow_id', 'user_id')->withTimestamps();
     }
     
     public function follow($userId)
@@ -88,4 +90,5 @@ class User extends Authenticatable
         return Micropost::whereIn('user_id', $follow_user_ids);
     }
     
+
 }
