@@ -90,7 +90,7 @@ class User extends Authenticatable
     
         public function favorites()
     {
-        return $this->belongsToMany(User::class, 'user_follow', 'micropost_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'favorites', 'micropost_id', 'user_id')->withTimestamps();
     }
     
     public function favorite($userId)
