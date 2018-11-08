@@ -22,7 +22,7 @@
             </ul>
 
             @if (Auth::id() == $user->id)
-                  {!! Form::open(['route' => 'favorite.store']) !!}
+                  {!! Form::open(['route' => 'favorites.store']) !!}
                       <div class="form-group">
                           {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
                           {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
