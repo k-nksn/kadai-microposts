@@ -96,7 +96,7 @@ class User extends Authenticatable
     public function favorite($userId)
     {
         // 既にお気に入りしているかの確認
-        $exist = $this->is_favorites($userId);
+        $exist = $this->is_favorite($userId);
         // 自分自身ではないかの確認
         $its_me = $this->id == $userId;
 
@@ -113,7 +113,7 @@ class User extends Authenticatable
     public function unfavorite($userId)
     {
         // 既にお気に入りしているかの確認
-        $exist = $this->is_favorites($userId);
+        $exist = $this->is_favorite($userId);
         // 自分自身ではないかの確認
         $its_me = $this->id == $userId;
 
