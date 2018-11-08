@@ -29,7 +29,7 @@
                       </div>
                   {!! Form::close() !!}
             @endif
-            @if (count($microposts) > 0)
+            @if (count($favorites) > 0)
                 @include('microposts.microposts', ['microposts' => $microposts])
             @endif
             
