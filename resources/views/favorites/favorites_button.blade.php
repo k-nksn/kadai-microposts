@@ -5,7 +5,7 @@
         {!! Form::close() !!}
     @else
         {!! Form::open(['route' => ['user.favorite', $user->id]]) !!}
-            {!! Form::submit('Favorite', ['class' => "btn btn-primary btn-block"]) !!}
+            {!! Form::submit('Favorite', ['class' => "btn btn-outline-secondary btn-block"]) !!}
         {!! Form::close() !!}
     @endif
 @endif

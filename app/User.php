@@ -95,16 +95,16 @@ class User extends Authenticatable
     
     public function favorite($userId)
     {
-        // 既にフォローしているかの確認
+        // 既にお気に入りしているかの確認
         $exist = $this->is_favorites($userId);
         // 自分自身ではないかの確認
         $its_me = $this->id == $userId;
 
         if ($exist || $its_me) {
-            // 既にフォローしていれば何もしない
+            // 既にお気に入りしていれば何もしない
             return false;
         } else {
-            // 未フォローであればフォローする
+            // 未お気に入りであればフォローする
             $this->favorites()->attach($userId);
             return true;
         }
@@ -112,17 +112,17 @@ class User extends Authenticatable
 
     public function unfavorite($userId)
     {
-        // 既にフォローしているかの確認
+        // 既にお気に入りしているかの確認
         $exist = $this->is_favorites($userId);
         // 自分自身ではないかの確認
         $its_me = $this->id == $userId;
 
         if ($exist && !$its_me) {
-            // 既にフォローしていればフォローを外す
+            // 既にお気に入りしていればお気に入りを外す
             $this->favorites()->detach($userId);
             return true;
         } else {
-            // 未フォローであれば何もしない
+            // 未お気に入りであれば何もしない
             return false;
         }
     }
