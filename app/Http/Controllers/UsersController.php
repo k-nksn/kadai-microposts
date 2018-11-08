@@ -75,7 +75,7 @@ class UsersController extends Controller
 
         $data += $this->counts($user);
 
-        return view('users.favorite', $data);
+        return view('users.favorites', $data);
     }
     
 }
